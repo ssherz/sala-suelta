@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sala «Suelta» · Gracias por soltar</title>
+<meta name="description" content="Prototipo piloto de Sala «Suelta»: rutas de apoyo en Bogotá, una respiración de un minuto y los cinco cuartos.">
+<meta name="theme-color" content="#18202E">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--night:#18202E;--night2:#232D3F;--amber:#E8A65A;--amberd:#A8601A;--sand:#F1E7D6;--sand2:#E6D8C1;--soft:#DCE1EA;--muted:#8C96A8;--ink:#1F2633}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--night);color:var(--soft);font-family:Raleway,system-ui,sans-serif;font-weight:300;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:640px;margin:0 auto;padding:0 24px}
+h1,h2,.serif{font-family:"Cormorant Garamond",Georgia,serif;font-weight:300;letter-spacing:.01em}
+.kicker{font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:var(--amber);font-weight:500}
+a{color:inherit}
+/* hero */
+.hero{min-height:92vh;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden;padding-bottom:56px}
+.hero::before{content:"";position:absolute;inset:0;background:url(assets/0-pasillo.jpg) center/cover;opacity:.35;transform:scale(1.05);animation:drift 30s ease-in-out infinite alternate}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(24,32,46,.2) 0%,rgba(24,32,46,.75) 55%,var(--night) 100%)}
+.hero .wrap{position:relative;z-index:1}
+@keyframes drift{to{transform:scale(1.14) translateY(-2%)}}
+.hero h1{font-size:clamp(3.2rem,15vw,5.4rem);line-height:.95;color:var(--sand);margin:18px 0 22px}
+.hero h1 em{color:var(--amber);font-style:italic}
+.hero p{font-size:1.12rem;max-width:30ch;color:var(--soft)}
+.fade{opacity:0;animation:fade 2.4s ease forwards}
+.d1{animation-delay:.4s}.d2{animation-delay:1.4s}.d3{animation-delay:2.4s}
+@keyframes fade{to{opacity:1}}
+.scroll{display:inline-block;margin-top:36px;font-size:.8rem;letter-spacing:.2em;color:var(--muted);text-decoration:none}
+section{padding:72px 0}
+h2{font-size:clamp(2.2rem,10vw,3rem);line-height:1.05;margin:12px 0 14px}
+.lead{color:var(--muted);margin-bottom:28px}
+/* support */
+.sand{background:var(--sand);color:var(--ink)}
+.sand .kicker{color:var(--amberd)}
+.sand .lead{color:#6A6255}
+.card{background:#fff9ef;border-radius:18px;padding:22px 22px 18px;margin-bottom:14px;border:1px solid var(--sand2)}
+.card h3{font-family:"Cormorant Garamond",serif;font-weight:400;font-size:1.7rem;line-height:1.1}
+.card .when{font-size:.8rem;letter-spacing:.08em;color:var(--amberd);font-weight:500;margin:4px 0 8px}
+.card p{font-size:.98rem}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:999px;text-decoration:none;font-weight:500;font-size:.95rem;background:var(--night);color:var(--sand)}
+.btn.alt{background:transparent;border:1.5px solid var(--night);color:var(--night)}
+.sos{background:var(--night);color:var(--sand);border:none}
+.sos h3{color:var(--amber)}.sos .when{color:var(--muted)}
+.sos .btn{background:var(--amber);color:var(--night)}
+.src{font-size:.75rem;color:#6A6255;margin-top:18px}
+/* rooms */
+.rooms{display:grid;gap:14px}
+.room{display:grid;grid-template-columns:112px 1fr;gap:16px;align-items:center;background:var(--night2);border-radius:16px;overflow:hidden}
+.room img{width:112px;height:112px;object-fit:cover;display:block}
+.room b{display:block;font-weight:500;letter-spacing:.28em;color:var(--amber);font-size:.9rem}
+.room span{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:1.45rem;line-height:1.15;color:var(--sand)}
+/* breathe */
+.breathe{text-align:center}
+.circle-wrap{height:300px;display:flex;align-items:center;justify-content:center;margin:24px 0 8px}
+.circle{width:120px;height:120px;border-radius:50%;background:radial-gradient(circle at 40% 35%,#F6C98E,var(--amber) 60%,var(--amberd));box-shadow:0 0 60px rgba(232,166,90,.35);transform:scale(1);transition:transform 4s ease-in-out}
+.circle.in{transform:scale(2.1)}
+.say{font-family:"Cormorant Garamond",serif;font-size:2rem;min-height:2.6rem;color:var(--sand)}
+.count{color:var(--muted);font-size:.85rem;min-height:1.4rem}
+.go{margin-top:18px;background:transparent;border:1.5px solid var(--amber);color:var(--amber);font:500 .95rem Raleway,sans-serif;padding:12px 26px;border-radius:999px;cursor:pointer}
+/* video */
+video{width:100%;border-radius:16px;display:block;background:#000}
+footer{padding:48px 0 64px;color:var(--muted);font-size:.8rem;border-top:1px solid var(--night2)}
+footer p+p{margin-top:8px}
+@media (prefers-reduced-motion:reduce){.hero::before{animation:none}.fade{animation:none;opacity:1}.circle{transition:none}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="kicker fade d1">Sala «Suelta»</p>
+    <h1 class="fade d2">Gracias por <em>soltar.</em></h1>
+    <p class="fade d3">Lo que dejaste adentro ya no tienes que cargarlo. Te dejamos esto para el camino.</p>
+    <a class="scroll fade d3" href="#hablar">↓ &nbsp;sigue bajando, sin afán</a>
+  </div>
+</header>
+
+<section id="hablar" class="sand">
+  <div class="wrap">
+    <p class="kicker">Si necesitas hablar con alguien</p>
+    <h2>Hablar también es soltar.</h2>
+    <p class="lead">Del otro lado hay personas que saben escuchar. Son líneas gratuitas de Bogotá.</p>
+
+    <div class="card sos">
+      <h3>123 · Emergencias</h3>
+      <p class="when">24 horas · todos los días</p>
+      <p>Si sientes que estás en peligro. Incluye atención en salud mental.</p>
+      <div class="btns"><a class="btn" href="tel:123">Llamar al 123</a></div>
+    </div>
+
+    <div class="card">
+      <h3>Línea 106</h3>
+      <p class="when">24 horas · todos los días</p>
+      <p>Escucha y apoyo emocional, a cualquier edad. Te atienden profesionales en psicología.</p>
+      <div class="btns">
+        <a class="btn" href="tel:106">Llamar al 106</a>
+        <a class="btn alt" href="https://wa.me/573007548933">WhatsApp 300 754 8933</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Línea Psicoactiva</h3>
+      <p class="when">Todos los días · 7:30 a. m. a 10:30 p. m.</p>
+      <p>Si el consumo de alcohol u otras sustancias te está preocupando.</p>
+      <div class="btns">
+        <a class="btn" href="tel:018000112439">01 8000 112 439</a>
+        <a class="btn alt" href="https://wa.me/573012761197">WhatsApp 301 276 1197</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Línea Púrpura</h3>
+      <p class="when">24 horas · mujeres mayores de 18</p>
+      <p>Si estás viviendo una situación de violencia. Mujeres que escuchan mujeres.</p>
+      <div class="btns">
+        <a class="btn" href="tel:018000112137">01 8000 112 137</a>
+        <a class="btn alt" href="https://wa.me/573007551846">WhatsApp 300 755 1846</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Línea Calma</h3>
+      <p class="when">L–V 8:30 a. m.–10:30 p. m. · S–D 2:00–10:30 p. m.</p>
+      <p>Escucha emocional para hombres mayores de 18.</p>
+      <div class="btns"><a class="btn" href="tel:018000423614">01 8000 423 614</a></div>
+    </div>
+
+    <p class="src">Datos tomados de Bogota.gov.co y de la Secretaría Distrital de Salud (noviembre de 2026).</p>
+  </div>
+</section>
+
+<section class="breathe">
+  <div class="wrap">
+    <p class="kicker">Un minuto para ti</p>
+    <h2>Respiremos juntos.</h2>
+    <p class="lead">Sigue el círculo. Cuando crece, tomas aire. Cuando baja, lo sueltas.</p>
+    <div class="circle-wrap"><div class="circle" id="circle"></div></div>
+    <p class="say" id="say">&nbsp;</p>
+    <p class="count" id="count">&nbsp;</p>
+    <button class="go" id="go" type="button">Empezar</button>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="kicker">Vuelve cuando quieras</p>
+    <h2>Cinco cuartos te esperan.</h2>
+    <p class="lead">La próxima vez, elige el que te pida el momento.</p>
+    <div class="rooms">
+      <div class="room"><img src="assets/1-tinta.jpg" alt="Cuarto Tinta: escritorio de madera con lámpara y cuaderno"><div><b>TINTA</b><span>escribe lo que pesa</span></div></div>
+      <div class="room"><img src="assets/2-trazo.jpg" alt="Cuarto Trazo: paredes de tablero con tiza"><div><b>TRAZO</b><span>cuando no hay palabras</span></div></div>
+      <div class="room"><img src="assets/3-pausa.jpg" alt="Cuarto Pausa: cuarto acolchado con un cojín y luz suave"><div><b>PAUSA</b><span>solo respira</span></div></div>
+      <div class="room"><img src="assets/4-marea.jpg" alt="Cuarto Marea: columna de agua de vidrio sellada"><div><b>MAREA</b><span>déjalo ir con el agua</span></div></div>
+      <div class="room"><img src="assets/5-eco.jpg" alt="Cuarto Eco: paneles acústicos y un micrófono"><div><b>ECO</b><span>dilo en voz alta</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:24px">
+  <div class="wrap">
+    <p class="kicker">El recorrido</p>
+    <h2>Así se siente entrar.</h2>
+    <p class="lead">72 segundos, en primera persona.</p>
+    <video controls playsinline preload="metadata" poster="assets/poster.jpg">
+      <source src="assets/recorrido-sala-suelta.mp4" type="video/mp4">
+    </video>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Prototipo piloto — Sala «Suelta» · Cultura de emprendimiento · Taller 5 · 2026</p>
+    <p>Esta página es un prototipo de clase. No guardamos ningún dato. Si estás en una emergencia, llama al <a href="tel:123">123</a>.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var c=document.getElementById('circle'),say=document.getElementById('say'),cnt=document.getElementById('count'),go=document.getElementById('go'),t=null;
+  function stop(msg){clearInterval(t);t=null;c.classList.remove('in');say.textContent=msg||'\u00a0';cnt.textContent='\u00a0';go.textContent='Otra vez';go.style.display='';}
+  go.addEventListener('click',function(){
+    go.style.display='none';var s=0,total=60;
+    function tick(){
+      var phase=Math.floor(s/4)%2;
+      if(s%4===0){c.classList.toggle('in',phase===0);say.textContent=phase===0?'Toma aire…':'Suéltalo…';}
+      cnt.textContent=(total-s)+' s';
+      s++; if(s>total){stop('Bien. Aquí sigues.');}
+    }
+    tick();t=setInterval(tick,1000);
+  });
+})();
+</script>
+</body>
+</html>
