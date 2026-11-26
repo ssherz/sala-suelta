@@ -1,5 +1,8 @@
-# Sala «Suelta» — página piloto
+# SUELTA — página web
 
-Prototipo de clase (Cultura de emprendimiento · Taller 5 · 2026). Página a la que lleva el QR a la salida de Sala «Suelta»: rutas de apoyo en Bogotá, una respiración de un minuto, los cinco cuartos y el video del recorrido. No recoge datos.
+Página publicitaria de SUELTA (Cultura de Emprendimiento · Taller 5 · Bogotá · 2026): las cuatro salas (PALABRA, TRAZO, CALMA y FLUIR), el recorrido en 3D, cómo funciona, un minuto para respirar y rutas de apoyo en Bogotá. No recoge datos.
+
+- `index.html` — página principal
+- `recorrido.html` — recorrido en 3D (destino del QR de la presentación)
 
 Fuentes de las líneas: https://bogota.gov.co/mi-ciudad/salud/donde-llamar-para-recibir-atencion-psicosocial-y-juridica-en-bogota · https://www.saludcapital.gov.co/Paginas2/Quienes_Somos_linea106.aspx

@@ -4,34 +4,51 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>SUELTA · Recorrido en 3D</title>
-<meta name="description" content="Recorrido en 3D por SUELTA y sus 4 salas: PALABRA, TRAZO, CALMA y FLUIR.">
+<meta name="description" content="Recorrido en 3D por SUELTA y sus salas. Un espacio para soltar sin fingir.">
+<meta name="theme-color" content="#FBF9F5">
 <meta property="og:title" content="SUELTA · Recorrido en 3D">
 <meta property="og:image" content="recorrido-poster.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0}
-body{background:#18202E;color:#F1E7D6;font-family:Raleway,system-ui,sans-serif;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px 16px}
-header{text-align:center;margin-bottom:20px}
-.k{color:#E8A65A;letter-spacing:.25em;font-size:12px;text-transform:uppercase}
-h1{font-family:"Cormorant Garamond",Georgia,serif;font-weight:300;font-size:clamp(34px,7vw,56px);color:#F6C98E;margin-top:6px}
+body{background:#FBF9F5;color:#3A352C;font-family:"DM Sans",system-ui,sans-serif;font-weight:300;min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:28px 16px 36px;-webkit-font-smoothing:antialiased;position:relative;overflow-x:hidden}
+body::before{content:"";position:fixed;top:-20vw;left:-20vw;width:70vw;height:70vw;border-radius:50%;background:radial-gradient(circle,rgba(201,157,162,.2),transparent 65%);z-index:-1}
+body::after{content:"";position:fixed;bottom:-25vw;right:-20vw;width:70vw;height:70vw;border-radius:50%;background:radial-gradient(circle,rgba(143,158,125,.2),transparent 65%);z-index:-1}
+.back{position:fixed;top:16px;left:16px;display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:999px;background:rgba(251,249,245,.75);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(200,168,130,.35);color:#3A352C;text-decoration:none;font-size:.88rem;z-index:5;transition:background .3s}
+.back:hover{background:#EFE8DC}
+header{text-align:center;margin:40px 0 26px}
+.k{display:inline-flex;align-items:center;gap:12px;color:#5E6B4F;letter-spacing:.34em;font-size:.72rem;text-transform:uppercase;font-weight:500}
+.k::before,.k::after{content:"";width:24px;height:1px;background:#C8A882}
+h1{font-family:"Cormorant Garamond",Georgia,serif;font-weight:300;font-size:clamp(2.6rem,7vw,4.6rem);line-height:1.05;margin-top:12px}
+h1 em{font-style:italic;color:#5E6B4F}
 main{width:100%;max-width:1100px}
-video{width:100%;aspect-ratio:16/9;display:block;border:3px solid #E8A65A;border-radius:6px;background:#000}
-p{text-align:center;color:#DCE1EA;font-size:15px;margin-top:16px;line-height:1.5}
-a{color:#E8A65A}
-footer{margin-top:22px;font-size:12px;color:#8b93a3;text-align:center}
+.player{padding:12px;border-radius:28px;background:linear-gradient(145deg,#EFE8DC,#F6F1E8);box-shadow:0 50px 90px -50px rgba(58,53,44,.5)}
+video{width:100%;aspect-ratio:16/9;display:block;border-radius:18px;background:#3A352C}
+p{text-align:center;color:#7A7264;font-size:.95rem;margin-top:20px;line-height:1.6}
+a.l{color:#3A352C;border-bottom:1px solid #C8A882;text-decoration:none}
+.btn{display:inline-block;margin-top:26px;padding:14px 28px;border-radius:999px;background:#5E6B4F;color:#FBF9F5;text-decoration:none;font-size:.95rem;transition:background .3s}
+.btn:hover{background:#3A352C}
+.c{text-align:center}
+footer{margin-top:30px;font-size:.8rem;color:#7A7264;text-align:center;letter-spacing:.04em}
+footer b{font-family:"Cormorant Garamond",serif;font-weight:500;letter-spacing:.28em;font-size:1.1rem;color:#3A352C}
+@media(max-width:560px){.player{padding:7px;border-radius:20px}video{border-radius:14px}header{margin-top:56px}}
 </style>
 </head>
 <body>
-<header><div class="k">SUELTA · Grupo 2</div><h1>Recorrido en 3D</h1></header>
+<a class="back" href="index.html">← Volver a SUELTA</a>
+<header><div class="k">SUELTA</div><h1>Recorrido <em>en 3D</em></h1></header>
 <main>
+<div class="player">
 <video controls playsinline preload="metadata" poster="recorrido-poster.jpg">
 <source src="recorrido-suelta-4-salas.mp4" type="video/mp4">
-Tu navegador no reproduce el video. <a href="recorrido-suelta-4-salas.mp4">Ábrelo aquí</a>.
+Tu navegador no reproduce el video. <a class="l" href="recorrido-suelta-4-salas.mp4">Ábrelo aquí</a>.
 </video>
-<p>Del pasillo a cada sala: PALABRA, TRAZO, CALMA y FLUIR.<br><a href="recorrido-suelta-4-salas.mp4">Abrir el video directo (MP4)</a></p>
+</div>
+<p>Del pasillo a cada sala, en primera persona. · <a class="l" href="recorrido-suelta-4-salas.mp4">Abrir el video directo (MP4)</a></p>
+<div class="c"><a class="btn" href="index.html#espacios">Conocer los espacios</a></div>
 </main>
-<footer>SUELTA · Un espacio para soltar sin fingir</footer>
+<footer><b>SUELTA</b><br>Un espacio para soltar sin fingir</footer>
 </body>
 </html>
